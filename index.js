@@ -11,7 +11,7 @@ let users = [
   {
 		id: 1,
 		name: 'John',
-		favoriteMovies: [],
+		favoriteMovies: 'Love Actually',
 	},
 	{
 		id: 2,
@@ -87,7 +87,7 @@ let movies = [
 		},
 	},
     {
-      Title: 'MovieName',
+      Title: 'MovieTitle',
       Description: 'Description',
       Genre: {
         Name: 'GenreName',
@@ -105,7 +105,7 @@ let movies = [
 
 //Welcome
 app.get('/', (req, res) => {
-  res.send('Welcome to MyFlix App!');
+  res.send('Welcome to MyFlix App');
 });
 
 //get Movielist
@@ -180,13 +180,13 @@ app.put('/users/:id', (req, res) => {
 });
 
 //Add Movie to Favorites
-app.post('/users/:id/:movieTitle', (req, res) => {
-	const { id, movieTitle } = req.params;
+app.post('/users/:id/:title', (req, res) => {
+	const { id, title } = req.params;
 
 	let user = users.find((user) => user.id == id);
 
 	if (user) {
-		user.favoriteMovies.push(movieTitle);
+		user.favoriteMovies.push(title);
 		res.status(200).send(
 			`the Movie has been added to your favorites`
 		);
@@ -195,7 +195,7 @@ app.post('/users/:id/:movieTitle', (req, res) => {
 	}
 });
 
-//Remove Movie from Favs
+//Remove Movie from Favorites
 app.delete('/users/:id/:movieTitle', (req, res) => {
 	const { id, movieTitle } = req.params;
 
@@ -231,19 +231,6 @@ app.delete('/users/:id', (req, res) => {
 app.get('/documentation', (req, res) => {                  
     res.sendFile('public/documentation.html', { root: __dirname });
   });
-
-
-// express static
-app.use(express.static('public'));
-
-const bodyParser = require('body-parser'),
-  methodOverride = require('method-override');
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-app.use(bodyParser.json());
-app.use(methodOverride()); 
 
 
 // error handler
