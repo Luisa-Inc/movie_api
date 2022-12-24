@@ -277,19 +277,19 @@ app.post('/users/:Username/movies/:MovieID', (req, res) => {
 
 //Delete Movie from Favorites / DELETE
 app.delete('/users/:Username/:MovieID', (req, res) => {
-	Users.findOneAndUpdate({ Userame: req.params.Userame }, {
-	   $pull: { Favorites: req.params.MovieID }
-	 },
-	 { new: true }, // This line makes sure that the updated document is returned
+	Users.findOneAndUpdate({ Username: req.params.Username }, {
+	$pull: { FavoriteMovies: req.params.MovieID }
+	},
+	{ new: true }, // This line makes sure that the updated document is returned
 	(err, updatedUser) => {
-	  if (err) {
-		console.error(err);
-		res.status(500).send('Error: ' + err);
-	  } else {
-		res.json(updatedUser);
-	  }
+	if (err) {
+	console.error(err);
+	res.status(500).send('Error: ' + err);
+	} else {
+	res.json(updatedUser);
+	}
 	});
-  });
+	});
 
 // Delete a user by username / DELETE
 app.delete('/users/:Username', (req, res) => {
