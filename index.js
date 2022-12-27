@@ -1,15 +1,19 @@
 const express = require('express'),
-app = express(),
 bodyParser = require('body-parser'),
 uuid = require('uuid'),
 morgan = require('morgan');
+fs = require('fs'),
+path = require('path');
 
+const app = express();
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 const Models = require('./models.js');
 
 const Movies = Models.Movie; //refer to the model names you defined in “models.js”
 const Users = Models.User; //refer to the model names you defined in “models.js”
+const Genres = Models.Genre;
+const Directors = Models.Director;
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB ', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -23,103 +27,9 @@ const passport = require('passport');
 require('./passport');
 
 
-app.use(morgan('common'));
-
-let users = [
-  {
-		id: 1,
-		name: 'John',
-		favoriteMovies: 'Love Actually',
-	},
-	{
-		id: 2,
-		name: 'James',
-		favoriteMovies: 'The Notebook',
-	},
-];
-
-let movies = [
-  {
-		Title: 'The Young and Prodigious T. S. Spivet',
-		Description: 'Description 1',
-		Genre: {
-			Name: 'Drama',
-			Description: 'Description Genre',
-		},
-		Director: {
-			Name: 'Director 1',
-			Bio: 'Bio Director 1',
-			Birth: 1969,
-		},
-	},
-	{
-		Title: 'The Notebook',
-		Description: 'Description 2',
-		Genre: {
-			Name: 'Drama',
-			Description: 'Description Genre',
-		},
-		Director: {
-			Name: 'Director 2',
-			Bio: 'Bio Director 2',
-			Birth: 1972,
-		},
-	},
-	{
-		Title: 'Love Actually',
-		Description: 'Description 3',
-		Genre: {
-			Name: 'Romance',
-			Description: 'Description Genre',
-		},
-		Director: {
-			Name: 'Director 3',
-			Bio: 'Bio Director 3',
-			Birth: 1980,
-		},
-	},
-	{
-		Title: 'Title 4',
-		Description: 'Description 4',
-		Genre: {
-			Name: 'Action',
-			Description: 'Description Genre',
-		},
-		Director: {
-			Name: 'Director 4',
-			Bio: 'Bio Director 4',
-			Birth: 1981,
-		},
-	},
-	{
-		Title: 'Title 5',
-		Description: 'Description 5',
-		Genre: {
-			Name: 'Comedy',
-			Description: 'Description Genre',
-		},
-		Director: {
-			Name: 'Director 5',
-			Bio: 'Bio Director 5',
-			Birth: 1982,
-		},
-	},
-    {
-      Title: 'MovieTitle',
-      Description: 'Description',
-      Genre: {
-        Name: 'GenreName',
-        Description: 'DramaDescription',
-      },
-      Director: {
-        Name: 'DirectorName',
-        Bio: 'DirectorBio',
-        Birth: 1988,
-      },
-    },
-
-  ];
-
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
+app.use(morgan('common', {stream: accessLogStream}));
+app.use(express.static('public'));
 
 //Welcome
 app.get('/', (req, res) => {
