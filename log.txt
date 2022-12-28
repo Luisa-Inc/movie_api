@@ -16,3 +16,34 @@ Timestamp: Wed Dec 14 2022 13:08:21 GMT+0100 (Mitteleuropäische Normalzeit)
 URL: /favicon.ico
 Timestamp: Wed Dec 14 2022 13:08:21 GMT+0100 (Mitteleuropäische Normalzeit)
 
+::1 - - [27/Dec/2022:16:31:35 +0000] "POST /users/ HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:32:51 +0000] "POST /users/ HTTP/1.1" 400 25
+::1 - - [27/Dec/2022:16:33:47 +0000] "POST /users/ HTTP/1.1" 201 178
+::1 - - [27/Dec/2022:16:34:30 +0000] "GET /users/ HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:35:02 +0000] "GET /users/ HTTP/1.1" 200 1699
+::1 - - [27/Dec/2022:16:35:34 +0000] "GET /users/juliaduck HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:36:10 +0000] "GET /users/juliaduck HTTP/1.1" 200 141
+::1 - - [27/Dec/2022:16:38:37 +0000] "GET /movies/directors/Director%20Richard%20Curtis/ HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:39:11 +0000] "GET /movies/directors/Director%20Richard%20Curtis/ HTTP/1.1" 500 69
+::1 - - [27/Dec/2022:16:39:20 +0000] "GET /movies/directors/Directors%20Richard%20Curtis/ HTTP/1.1" 500 69
+::1 - - [27/Dec/2022:16:39:43 +0000] "GET /movies/ HTTP/1.1" 200 7557
+::1 - - [27/Dec/2022:16:41:39 +0000] "GET /movies/directors/Directors/Richard%20Curtis/ HTTP/1.1" 404 183
+::1 - - [27/Dec/2022:16:41:59 +0000] "GET /movies/directors/Richard%20Curtis/ HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:42:31 +0000] "GET /movies/directors/Richard%20Curtis/ HTTP/1.1" 200 138
+::1 - - [27/Dec/2022:16:43:22 +0000] "PUT /users/jamespenguin/ HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:43:54 +0000] "PUT /users/jamespenguin/ HTTP/1.1" 200 138
+::1 - - [27/Dec/2022:16:44:13 +0000] "PUT /users/luisa/ HTTP/1.1" 200 4
+::1 - - [27/Dec/2022:16:45:02 +0000] "PUT /users/jamespenguin/ HTTP/1.1" 200 4
+::1 - - [27/Dec/2022:16:46:43 +0000] "PUT /users/jamespenguin/ HTTP/1.1" 200 4
+::1 - - [27/Dec/2022:16:48:35 +0000] "PUT /users/Luisa/ HTTP/1.1" 200 140
+::1 - - [27/Dec/2022:16:49:29 +0000] "POST /users/juliaduck/movies/63a43b9230ae3b6a4699eccf HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:50:10 +0000] "POST /users/juliaduck/movies/63a43b9230ae3b6a4699eccf HTTP/1.1" 200 141
+::1 - - [27/Dec/2022:16:51:07 +0000] "POST /users/juliaduck/63a43b9230ae3b6a4699eccf HTTP/1.1" 404 180
+::1 - - [27/Dec/2022:16:51:19 +0000] "POST /users/juliaduck/movies/63a43b9230ae3b6a4699eccf HTTP/1.1" 200 141
+::1 - - [27/Dec/2022:16:52:46 +0000] "DELETE /users/juliaduck/63a47c8f30ae3b6a4699ecd7 HTTP/1.1" 404 182
+::1 - - [27/Dec/2022:16:53:47 +0000] "DELETE /users/juliaduck/movies/63a47c8f30ae3b6a4699ecd7 HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:54:27 +0000] "DELETE /users/juliaduck/movies/63a47c8f30ae3b6a4699ecd7 HTTP/1.1" 200 141
+::1 - - [27/Dec/2022:16:55:07 +0000] "DELETE /users/jamespenguin/ HTTP/1.1" 401 -
+::1 - - [27/Dec/2022:16:55:36 +0000] "DELETE /users/jamespenguin/ HTTP/1.1" 400 26
+::1 - - [27/Dec/2022:16:55:51 +0000] "DELETE /users/larissamayer/ HTTP/1.1" 200 25
+::1 - - [27/Dec/2022:16:56:24 +0000] "DELETE /users/larissamayer/ HTTP/1.1" 401 -
