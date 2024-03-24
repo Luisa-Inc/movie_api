@@ -47,7 +47,7 @@
      <tbody>
 
     <tr>
-        <td>Allow existing users log in</td>
+        <td>Allow existing users to log in</td>
         <td>/login</td>
         <td>POST</td>
         <td>-</td>
@@ -66,29 +66,29 @@
 
     <tr>
         <td>Get a single movie by title</td>
-        <td>/movies/:title</td>
+        <td>/movies/[title]</td>
         <td>GET</td>
-        <td>:title</td>
+        <td>[title]</td>
         <td>-</td>
-        <td>A JSON object holding data about a single movie</td>
+        <td>A JSON object holding data about a single movie, containing title, year, genre, director</td>
     </tr>
 
     <tr>
         <td>Get Genre by Name</td>
-        <td>/movies/genre/:Name</td>
+        <td>/movies/genre/[genreName]</td>
         <td>GET</td>
-        <td>:genreName</td>
+        <td>[genreName]</td>
         <td>-</td>
-        <td>A JSON object holding data about the genre of a movie</td>
+        <td>A JSON object holding data about a single genre, containing genre name, description.</td>
     </tr>
 
     <tr>
         <td>Get director data by name</td>
-        <td>/movies/directors/:Name</td>
+        <td>/movies/directors/[directorName]</td>
         <td>GET</td>
-        <td>:Name</td>
+        <td>[directorName]</td>
         <td>-</td>
-        <td>A JSON object holding data about the data of a director</td>
+        <td>A JSON object holding data about a single director, containing director name, bio, birth and death year</td>
     </tr>
     <tr>
         <td>Get all Users</td>
@@ -101,11 +101,11 @@
 
     <tr>
         <td>Get a User by Username</td>
-        <td>/users/:Username</td>
+        <td>/users/[Username]</td>
         <td>GET</td>
+        <td>[Username]</td>
         <td>-</td>
-        <td>-</td>
-        <td> A JSON object holding data of a specific user</td>
+        <td> A JSON object holding data abouta single user, containing username, password, email, birthday, favorite movies.</td>
     </tr>
 
     <tr>
@@ -115,41 +115,50 @@
         <td>-</td>
         <td>A JSON object holding data about the users to add, structured like this:
         { "Username": "String","Password": "String","Email": "String","Birthday": "Date"}</td>
-        <td>A JSON object holding data about the user that was added, structured like this { "username" : "User1", "Password": "1234", "Email": "user1@gmail.com", "Birthday": "1970-01-01", "favorite movie" : [] } including an ID </td>
+        <td>A JSON object holding data about the user that was added, structured like this { "Username" : "User1", "Password": hashed password, "Email": "user1@gmail.com", "Birthday": "1970-01-01", "FavoriteMovies" : [] } including an ID </td>
     </tr>
 
     <tr>
         <td>Allow new users update their user info</td>
-        <td>/users/:Username</td>
+        <td>/users/[Username]</td>
         <td>PUT</td>
-        <td>:Username</td>
-        <td>-</td>
+        <td>[Username]</td>
+        <td>A JSON object holding data about the user which needs to be updated, structured like:
+                    <code>
+                        {
+                            Username: req.body.Username,
+                            Password: req.body.Password,
+                            Email: req.body.Email,
+                            Birthday: req.body.Birthday
+                        }
+                    </code>
+                </td>
         <td>A JSON object holding data about the updated information</td>
     </tr>
 
     <tr>
         <td>Add movie to favorite list</td>
-        <td>/users/:Username/movies/:MovieID</td>
+        <td>/users/[Username]/movies/[MovieID]</td>
         <td>POST</td>
-        <td>:Username, :MovieID</td>
+        <td>[Username], [MovieID]</td>
         <td>-</td>
         <td>A JSON Object holding data about the User and the movie that was added</td>
     </tr>
 
     <tr>
         <td>Delete movie from favorite list</td>
-        <td>/users/:Username/movies/:MovieID</td>
+        <td>/users/[Username]/movies/[MovieID]</td>
         <td>DELETE</td>
-        <td>:Username, :MovieID</td>
+        <td>[Username], [MovieID]</td>
         <td>-</td>
         <td>A JSON Object holding data about the User and the movie that was removed</td>
     </tr>
 
     <tr>
         <td>Allow existing users to deregister</td>
-        <td>/users/:Username</td>
+        <td>/users/[Username]</td>
         <td>DELETE</td>
-        <td>:Username</td>
+        <td>[Username]</td>
         <td>-</td>
         <td>A text message indicating whether the User has deregistered</td>
     </tr>

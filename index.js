@@ -25,9 +25,9 @@ mongoose.connect(process.env.CONNECTION_URI, {
 });
 
 
-app.use(cors()); // Allow all domains to access APi
+//app.use(cors()); // Allow all domains to access APi
 
-/*List of allowed domains to access API
+//List of allowed domains to access API
 
 const cors = require("cors");
 let allowedOrigins = [
@@ -57,7 +57,7 @@ app.use(
       return callback(null, true);
     },
   })
-);*/
+);
 
 app.use(bodyParser.json()); //any time using req.body, the data will be expected to be in JSON format
 app.use(bodyParser.urlencoded({ extended: true }));
