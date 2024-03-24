@@ -33,9 +33,14 @@ const cors = require("cors");
 let allowedOrigins = [
   "http://localhost:8080",
   "http://testsite.com",
+  "http://localhost:4200",
   "http://localhost:1234",
   "https://mighty-harbor-05233.herokuapp.com/",
+  "https://luisa-inc.github.io/",
   "https://myluisaflix.netlify.app/",
+  "https://luisa-inc.github.io/myFlix-Angular-client/welcome",
+  "https://luisa-inc.github.io/myFlix-Angular-client/movies",
+  "https://luisa-inc.github.io/myFlix-Angular-client/profile",
   "http://localhost:3000",
 ];
 app.use(
