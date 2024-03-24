@@ -36,6 +36,7 @@ let allowedOrigins = [
   "http://localhost:4200",
   "http://localhost:1234",
   "https://mighty-harbor-05233.herokuapp.com/",
+  "https://mighty-harbor-05233.herokuapp.com/login",
   "https://luisa-inc.github.io/",
   "https://myluisaflix.netlify.app/",
   "https://luisa-inc.github.io/myFlix-Angular-client/welcome",
