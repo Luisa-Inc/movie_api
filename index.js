@@ -14,7 +14,6 @@ mongoose.set("strictQuery", true);
 
 // Require Mongoose models from models.js
 const Models = require("./models.js");
-const { check, validationResult } = require("express-validator");
 const Movies = Models.Movie; //refer to the model names you defined in “models.js”
 const Users = Models.User; //refer to the model names you defined in “models.js”
 
