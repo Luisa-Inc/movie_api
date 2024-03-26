@@ -95,9 +95,9 @@ app.use(express.static("public"));
  * @param {Object} res - Express response object.
  * @returns {Object} - Sends a string response "Welcome to my movie page!".
  */
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
   res.send("Welcome to MyFlix App");
-});
+});*/
 
 /**
  * CREATE new user
