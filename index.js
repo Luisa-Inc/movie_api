@@ -6,7 +6,7 @@ const express = require("express"),
   morgan = require("morgan");
 (fs = require("fs")), (path = require("path"));
   const cors = require("cors")
-  ({ check, validationResult } = require("express-validator"));
+  const { check, validationResult } = require("express-validator");
 
 const app = express();
 const mongoose = require("mongoose");
