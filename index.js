@@ -5,7 +5,7 @@ const express = require("express"),
   uuid = require("uuid"),
   morgan = require("morgan");
 (fs = require("fs")), (path = require("path"));
-  cors = require("cors"),
+  const cors = require("cors")
   ({ check, validationResult } = require("express-validator"));
 
 const app = express();
@@ -29,7 +29,6 @@ mongoose.connect(process.env.CONNECTION_URI, {
 
 //List of allowed domains to access API
 
-const cors = require("cors");
 let allowedOrigins = [
   "http://localhost:8080",
   "http://testsite.com",
