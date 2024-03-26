@@ -43,6 +43,15 @@ let allowedOrigins = [
   "https://luisa-inc.github.io/myFlix-Angular-client/movies",
   "https://luisa-inc.github.io/myFlix-Angular-client/profile",
   "http://localhost:3000",
+  "http://localhost:49670",
+  "http://localhost:49668",
+  "http://localhost:49667",
+  "http://localhost:49666",
+  "http://localhost:49665",
+  "http://localhost:6646",
+  "http://localhost:5432",
+  "http://localhost:5040",
+  "http://localhost:135",
 ];
 app.use(
   cors({
