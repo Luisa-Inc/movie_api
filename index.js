@@ -36,7 +36,7 @@ let allowedOrigins = [
   "https://mighty-harbor-05233.herokuapp.com/",
   "https://mighty-harbor-05233.herokuapp.com/login",
   "https://luisa-inc.github.io/",
-  "https://myluisaflix.netlify.app/",
+  "https://myluisaflix.netlify.app",
   "https://luisa-inc.github.io/myFlix-Angular-client/welcome",
   "https://luisa-inc.github.io/myFlix-Angular-client/movies",
   "https://luisa-inc.github.io/myFlix-Angular-client/profile",
@@ -93,9 +93,9 @@ app.use(express.static("public"));
  * @param {Object} res - Express response object.
  * @returns {Object} - Sends a string response "Welcome to my movie page!".
  */
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Welcome to MyFlix App");
-});*/
+});
 
 /**
  * CREATE new user
